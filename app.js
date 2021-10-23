@@ -1,7 +1,8 @@
 const express = require("express");
 const cors = require("cors");
 const io = require("socket.io");
-
+const dotenv = require("dotenv");
+dotenv.config();
 const app = express();
 
 
@@ -41,7 +42,7 @@ app.post("/socket-test",(req, res, next)=>{
 })
 
 
-http.listen("8000",()=>{
+http.listen(process.env.PORT || 8000,()=>{
     console.log("listening on 8080")
 })
 
